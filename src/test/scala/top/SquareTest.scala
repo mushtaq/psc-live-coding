@@ -6,6 +6,8 @@ import utils.Specification
 
 class SquareTest extends Specification {
 
+  val timeout = 30.seconds
+
   "blocking" in {
     val result = Square.blocking(10)
 
