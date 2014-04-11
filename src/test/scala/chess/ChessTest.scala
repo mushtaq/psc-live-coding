@@ -14,27 +14,10 @@ class ChessTest extends Specification {
     val topPlayers = WS
       .url(url)
       .lineStream
-      .map(ChessMove.make)
-      .buffer(5.seconds)
 //      .map(_.size)
-          .map { moves =>
-            moves
-              .groupBy(_.user)
-              .mapValues(_.size)
-              .toSeq
-              .sortBy(_._2)
-              .reverse
-              .take(3)
-          }
 
-    topPlayers.subscribe(x => {
-      println(x)
-      println ("=" * 80)
-    })
 
-    println("end")
 
-    Thread.sleep(20000)
 
     1 mustEqual 1
   }

@@ -9,50 +9,36 @@ import utils.Config.executionContext
 
 object Square {
 
-  def delay: Int = Random.nextInt(5000)
+  def delay: Int = ???
 
-  def square(a: Int): Int = a * a
+  def square(a: Int): Int = ???
 
   def blocking(a: Int): Int = {
-    println(s"begin squaring $a")
 
-    Thread.sleep(delay)
 
-    val result = square(a)
 
-    println(s"END SQUARING $a")
 
-    result
+    ???
   }
 
-  def async(a: Int): Future[Int] = Future {
+  def async(a: Int): Future[Int] = {
 
-    blocking(a)
+    ???
   }
 
   def nonBlocking(a: Int): Future[Int] = {
-    println(s"begin (non-blocking) squaring $a")
 
-    Scheduler.asFuture(delay.millis) {
 
-      val result = square(a)
 
-      println(s"END (NON_BLOCKING) SQUARING $a")
 
-      result
-    }
+      ???
   }
 
   def streaming(a: Int): Observable[Int] = {
-    println(s"begin (streaming) squaring $a")
 
-    Scheduler.asObservable(delay.millis) {
 
-      val result = square(a)
 
-      println(s"END (STREAMING) SQUARING $a")
 
-      result
-    }
+    ???
   }
 }
