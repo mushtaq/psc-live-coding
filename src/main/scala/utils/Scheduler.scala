@@ -24,6 +24,7 @@ object Scheduler {
   def asObservable[T](delay: Duration)(block: =>T): Observable[T] = {
 
     val future = asFuture(delay)(block)
+
     Observable.from(future)
   }
 
